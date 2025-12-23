@@ -1,14 +1,55 @@
-title: Tabernáculo Puerta Abierta
-description: Sitio oficial
-baseurl: ""
-url: ""
+backend:
+  name: git-gateway
+  branch: main
 
-markdown: kramdown
-theme: minima
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
 
-# Keep Jekyll defaults for posts
-permalink: /:categories/:year/:month/:day/:title/
+locale: "es"
 
-# OPTIONAL: if you use plugins later, add them here
-# plugins:
-#   - jekyll-feed
+collections:
+  - name: "sermons"
+    label: "Sermones"
+    folder: "_posts/sermons"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Fecha", name: "date", widget: "datetime" }
+      - { label: "Categoría", name: "category", widget: "hidden", default: "sermons" }
+      - { label: "Resumen", name: "summary", widget: "text", required: false }
+      - { label: "YouTube URL (opcional)", name: "youtube", widget: "string", required: false }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+
+  - name: "announcements"
+    label: "Anuncios"
+    folder: "_posts/announcements"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Fecha", name: "date", widget: "datetime" }
+      - { label: "Categoría", name: "category", widget: "hidden", default: "announcements" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+
+  - name: "pages"
+    label: "Páginas"
+    files:
+      - label: "Inicio"
+        name: "home"
+        file: "index.md"
+        fields:
+          - { label: "Título", name: "title", widget: "string" }
+          - { label: "Contenido", name: "body", widget: "markdown" }
+      - label: "Página de Sermones"
+        name: "sermons_page"
+        file: "sermons.md"
+        fields:
+          - { label: "Título", name: "title", widget: "string" }
+          - { label: "Contenido", name: "body", widget: "markdown" }
+      - label: "Página de Anuncios"
+        name: "announcements_page"
+        file: "announcements.md"
+        fields:
+          - { label: "Título", name: "title", widget: "string" }
+          - { label: "Contenido", name: "body", widget: "markdown" }
