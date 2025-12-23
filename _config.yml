@@ -1,41 +1,7 @@
-backend:
-  name: git-gateway
-  branch: main
-
-media_folder: "assets/uploads"
-public_folder: "/assets/uploads"
-
-publish_mode: simple
-
-collections:
-  - name: "sermons"
-    label: "Sermones"
-    label_singular: "Sermon"
-    folder: "_posts"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    filter:
-      field: "category"
-      value: "sermons"
-    fields:
-      - { label: "Titulo", name: "title", widget: "string" }
-      - { label: "Fecha", name: "date", widget: "datetime" }
-      - { label: "Categoria", name: "category", widget: "hidden", default: "sermons" }
-      - { label: "Resumen", name: "summary", widget: "text", required: false }
-      - { label: "YouTube URL (opcional)", name: "youtube", widget: "string", required: false }
-      - { label: "Contenido", name: "body", widget: "markdown" }
-
-  - name: "announcements"
-    label: "Anuncios"
-    label_singular: "Anuncio"
-    folder: "_posts"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    filter:
-      field: "category"
-      value: "announcements"
-    fields:
-      - { label: "Titulo", name: "title", widget: "string" }
-      - { label: "Fecha", name: "date", widget: "datetime" }
-      - { label: "Categoria", name: "category", widget: "hidden", default: "announcements" }
-      - { label: "Contenido", name: "body", widget: "markdown" }
+title: Tabernáculo Puerta Abierta
+description: Sitio oficial de la iglesia (Puerto Vallarta).
+baseurl: ""
+url: ""
+theme: minima
+plugins:
+  - jekyll-feed
