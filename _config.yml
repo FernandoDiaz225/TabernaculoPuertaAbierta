@@ -1,30 +1,26 @@
-# /admin/config.yml  (Decap CMS)
-
 backend:
   name: git-gateway
   branch: main
 
-publish_mode: simple
-
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 
-# (Optional) helps the CMS show a "View site" link
-site_url: "https://tabpuertaabierta.netlify.app"
-display_url: "https://tabpuertaabierta.netlify.app"
+publish_mode: simple
 
 collections:
   - name: "sermons"
     label: "Sermones"
-    label_singular: "Sermón"
+    label_singular: "Sermon"
     folder: "_posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    filter: { field: "category", value: "sermons" }
+    filter:
+      field: "category"
+      value: "sermons"
     fields:
-      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Titulo", name: "title", widget: "string" }
       - { label: "Fecha", name: "date", widget: "datetime" }
-      - { label: "Categoría", name: "category", widget: "hidden", default: "sermons" }
+      - { label: "Categoria", name: "category", widget: "hidden", default: "sermons" }
       - { label: "Resumen", name: "summary", widget: "text", required: false }
       - { label: "YouTube URL (opcional)", name: "youtube", widget: "string", required: false }
       - { label: "Contenido", name: "body", widget: "markdown" }
@@ -35,9 +31,11 @@ collections:
     folder: "_posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    filter: { field: "category", value: "announcements" }
+    filter:
+      field: "category"
+      value: "announcements"
     fields:
-      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Titulo", name: "title", widget: "string" }
       - { label: "Fecha", name: "date", widget: "datetime" }
-      - { label: "Categoría", name: "category", widget: "hidden", default: "announcements" }
+      - { label: "Categoria", name: "category", widget: "hidden", default: "announcements" }
       - { label: "Contenido", name: "body", widget: "markdown" }
