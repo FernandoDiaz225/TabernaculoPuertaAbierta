@@ -2,6 +2,5 @@ title: Tabernáculo Puerta Abierta
 description: Sitio oficial de la iglesia (Puerto Vallarta).
 baseurl: ""
 url: ""
-theme: minima
 plugins:
   - jekyll-feed
