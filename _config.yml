@@ -1,0 +1,11 @@
+title: Church Name
+description: Service times, sermons, and announcements.
+markdown: kramdown
+
+collections:
+  sermons:
+    output: true
+    permalink: /sermons/:name/
+  announcements:
+    output: true
+    permalink: /announcements/:name/
