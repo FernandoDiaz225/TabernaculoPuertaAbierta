@@ -1,11 +1,43 @@
-title: Church Name
-description: Service times, sermons, and announcements.
-markdown: kramdown
+# /admin/config.yml  (Decap CMS)
+
+backend:
+  name: git-gateway
+  branch: main
+
+publish_mode: simple
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+# (Optional) helps the CMS show a "View site" link
+site_url: "https://tabpuertaabierta.netlify.app"
+display_url: "https://tabpuertaabierta.netlify.app"
 
 collections:
-  sermons:
-    output: true
-    permalink: /sermons/:name/
-  announcements:
-    output: true
-    permalink: /announcements/:name/
+  - name: "sermons"
+    label: "Sermones"
+    label_singular: "Sermón"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    filter: { field: "category", value: "sermons" }
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Fecha", name: "date", widget: "datetime" }
+      - { label: "Categoría", name: "category", widget: "hidden", default: "sermons" }
+      - { label: "Resumen", name: "summary", widget: "text", required: false }
+      - { label: "YouTube URL (opcional)", name: "youtube", widget: "string", required: false }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+
+  - name: "announcements"
+    label: "Anuncios"
+    label_singular: "Anuncio"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    filter: { field: "category", value: "announcements" }
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Fecha", name: "date", widget: "datetime" }
+      - { label: "Categoría", name: "category", widget: "hidden", default: "announcements" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
