@@ -1,0 +1,34 @@
+---
+layout: default
+---
+<article>
+  <h1>{{ page.title }}</h1>
+  <p><small>{{ page.date | date: "%B %d, %Y" }}</small></p>
+
+  {% if page.youtube %}
+    {% assign yt = page.youtube
+      | replace: "https://youtu.be/", ""
+      | replace: "https://www.youtube.com/watch?v=", ""
+      | replace: "https://m.youtube.com/watch?v=", ""
+    %}
+    {% assign yt = yt | split: "&" | first | split: "?" | first %}
+
+    <div class="video">
+      <iframe
+        src="https://www.youtube.com/embed/{{ yt }}"
+        title="YouTube video"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
+  {% endif %}
+
+  {% if page.summary %}
+    <p class="summary">{{ page.summary }}</p>
+  {% endif %}
+
+  <div class="content">
+    {{ content }}
+  </div>
+</article>
