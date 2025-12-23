@@ -1,11 +1,14 @@
-title: Church Name
-description: Service times, sermons, and announcements.
-markdown: kramdown
+title: Tabernáculo Puerta Abierta
+description: Sitio oficial
+baseurl: ""
+url: ""
 
-collections:
-  sermons:
-    output: true
-    permalink: /sermons/:name/
-  announcements:
-    output: true
-    permalink: /announcements/:name/
+markdown: kramdown
+theme: minima
+
+# Keep Jekyll defaults for posts
+permalink: /:categories/:year/:month/:day/:title/
+
+# OPTIONAL: if you use plugins later, add them here
+# plugins:
+#   - jekyll-feed
