@@ -1,21 +1,25 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="es">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>{{ page.title }} | {{ site.title }}</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ page.title }} | Tabernáculo Puerta Abierta</title>
+
     <link rel="stylesheet" href="/assets/css/style.css" />
   </head>
+
   <body>
     <header class="site-header">
-      <div class="container">
-        <a class="brand" href="/">{{ site.title }}</a>
-        <nav class="nav">
-          <a href="/">Home</a>
-          <a href="/sermons/">Sermons</a>
-          <a href="/announcements/">Announcements</a>
-        </nav>
-      </div>
+      <nav class="nav">
+        <div class="nav-title">
+          Tabernáculo Puerta Abierta
+        </div>
+        <div class="nav-links">
+          <a href="/">Inicio</a>
+          <a href="/sermons">Sermones</a>
+          <a href="/announcements">Anuncios</a>
+        </div>
+      </nav>
     </header>
 
     <main class="container">
@@ -23,9 +27,9 @@
     </main>
 
     <footer class="site-footer">
-      <div class="container">
-        <small>© {{ site.title }}</small>
-      </div>
+      <p>
+        © {{ site.time | date: "%Y" }} Tabernáculo Puerta Abierta
+      </p>
     </footer>
   </body>
 </html>
