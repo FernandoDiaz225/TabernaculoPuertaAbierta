@@ -1,7 +1,20 @@
+site_url: "https://tabpuertaabierta.netlify.app"
+display_url: "https://tabpuertaabierta.netlify.app"
+
+# Use Netlify Identity + Git Gateway so non-technical staff can log in
+# with email/password (no GitHub account required).
 backend:
-  name: github
-  repo: FernandoDiaz225/TabernaculoPuertaAbierta
+  name: git-gateway
   branch: main
+  accept_roles:
+    - admin
+
+# Optional (keeps things simple for now; you can enable editorial workflow later)
+publish_mode: simple
+
+slug:
+  encoding: "ascii"
+  clean_accents: true
 
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
