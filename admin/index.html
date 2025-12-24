@@ -1,31 +1,34 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Admin</title>
-  </head>
-  <body>
-    <!-- If scripts fail, at least you won't see a blank page -->
-    <noscript>This admin page requires JavaScript enabled.</noscript>
+---
+layout: default
+title: Inicio
+---
 
-    <!-- REQUIRED for Netlify Identity / Git Gateway login -->
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<section class="intro">
+  <h1>Tabernáculo Puerta Abierta</h1>
 
-    <!-- Decap CMS -->
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <p class="subtitle">
+    Una casa dedicada a la predicación fiel de la Palabra de Dios.
+  </p>
+</section>
 
-    <script>
-      // After login, keep them inside /admin/
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", (user) => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
-          }
-        });
-      }
-    </script>
-  </body>
-</html>
+<section>
+  <h2>Horarios de Servicio</h2>
+  <ul class="clean-list">
+    <li>Domingo — 10:00 AM</li>
+    <li>Miércoles — 7:00 PM</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Ubicación</h2>
+  <p>123 Main St, City</p>
+</section>
+
+<section>
+  <h2>Ministerio</h2>
+  <p>
+    Esta obra continúa bajo la dirección pastoral del hermano
+    <strong>William N. C. García</strong>, sirviendo dentro del legado
+    ministerial del hermano <strong>Bernabé García</strong>.
+  </p>
+</section>
