@@ -1,9 +1,115 @@
-body { font-family: system-ui, -apple-system, Arial; margin: 0; line-height: 1.5; }
-.container { max-width: 900px; margin: 0 auto; padding: 16px; }
-.site-header { border-bottom: 1px solid #ddd; }
-.brand { font-weight: 700; text-decoration: none; }
-.nav a { margin-left: 12px; text-decoration: none; }
-.site-footer { border-top: 1px solid #ddd; margin-top: 40px; }
-.video { margin: 16px 0; }
-.video iframe { width: 100%; aspect-ratio: 16 / 9; }
-.summary { font-style: italic; opacity: 0.9; }
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* BASE */
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #1f2933;
+  background-color: #fafafa;
+  line-height: 1.65;
+}
+
+/* LAYOUT */
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3.5rem 1.25rem;
+}
+
+/* HEADER */
+.site-header {
+  border-bottom: 1px solid #e5e7eb;
+  background: #ffffff;
+}
+
+.nav {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-title {
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.nav-links a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: #374151;
+  font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* FOOTER */
+.site-footer {
+  border-top: 1px solid #e5e7eb;
+  padding: 2rem 1.25rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+/* TYPOGRAPHY */
+h1 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.02em;
+}
+
+h2 {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  color: #374151;
+}
+
+p {
+  margin-bottom: 1.25rem;
+}
+
+/* HOMEPAGE */
+.intro {
+  margin-bottom: 4rem;
+}
+
+.subtitle {
+  font-size: 1.05rem;
+  color: #4b5563;
+  max-width: 520px;
+}
+
+/* LISTS */
+.clean-list {
+  list-style: none;
+}
+
+.clean-list li {
+  margin-bottom: 0.5rem;
+}
+
+/* SERMONS / CONTENT */
+.sermon-meta {
+  font-size: 0.85rem;
+  color: #6b7280;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.sermon-content {
+  margin-top: 2rem;
+}
